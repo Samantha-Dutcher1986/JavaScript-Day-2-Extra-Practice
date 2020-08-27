@@ -1,12 +1,14 @@
 // Use Array Methods to solve the tasks below 🎉
 
-const toppings = ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions', 'Cheese'];
+const toppings = ['Mushrooms', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions', 'Cheese'];
 
 /*
 TASK 1 🚀
 // The customer would like to see the topping options, console log out each of the toppings one by one in the array above 
 */
-
+toppings.forEach(function(item){
+    console.log(item);
+}
 
 /*
 TASK 2 🚀
@@ -14,6 +16,21 @@ TASK 2 🚀
 for example you no longer have any onions and need to remove it from the list of toppings
 Use .forEach() - hint - you will need to include the index in the callback
  */
+// function removeTopping(arr, item){
+//     var index = array.indexOf(item);
+//     if(index > -1){
+//         array.splice(index, 1);
+//     }
+// }
+// console.log(removeTopping);
+
+function removeTopping(toppings, item){
+    var index = toppings.indexOf('Onions');
+    if(index > -1){
+        toppings.splice(9, 1);
+    }
+}
+console.log(removeTopping);
 
 
 
@@ -21,7 +38,8 @@ Use .forEach() - hint - you will need to include the index in the callback
 TASK 3 🚀
 // Sort the topping alphabetically and return them in a new array 
 */
-
+toppings.sort()
+console.log(toppings.sort())
 
 
 
@@ -42,29 +60,82 @@ const vacations = [
 TASK 4 🚀
 // The travel agent would like to send a couple on their honeymoon to a location with a beach and a temperature above 90 degrees. return their options in a new array 
 */
+// function filterItems(arr, query){
+//     return arr.filter(function(el){
+//         return el.toLowerCase().IndexOf(query.toLowerCase());
+//     })
+// }
+// console.log(filterItems(arr, 'ap'));
+// console.log(filterItems(arr,'an'));
 
+//-----------------Filter Method------------------------
+const honeymoon = 
+vacations.filter(item => {
+    return item.temperature >90 && item.beach === true;
+});
 
-
+console.log(honeymoon);
+//-----------------Map Method----------------------------
+vacations.map((item) => {
+    if(item.temperature > 90){
+        return item.temperature
+    }
+})
 /*
 TASK 5 🚀
 // A developer decides to become a digital nomad for a year, they would like to live in a place with strong wifi, a beach, and good hiking, return their options
 */
-
-
+let nomad = [];
+for(let i = 0; i < vacations.length; i++){
+    if(vacations[i].wifi === strong, vacations[i].beach === true, vacations[i].hiking === true){
+        nomad.push(vacations[i]);
+    }
+}
+console.log(nomad);
 
 /* 
 TASK 6 🚀
 // write a function that allows a user to sort their vacations by hiking opportunities, beach access or a mix of both and return their options
 */
+// let vacationIdeas = [];
+// for(let i =0; i < vacations.length; i++){
+//     if(vacations[i].beach === true, vacations[i].hiking === true, vacations[i].beach + vacations[i].hiking === true){
+//         nomad.push(vacations[i]);
+//     }
+// }
+// console.log(vacationIdeas);
 
-
-
+function vacationWants(goal){
+    if(goal === 'hiking'){
+        return hiking;
+    }else if(goal === 'beach'){
+        return beach;
+    }else if(goal === both){
+        return both;
+    }else{
+        return 'Sorry, no options available';
+    }
+}
+vacationWants('hiking');
+vacationWants('beach');
+vacationWants('both');
+vacationWants('forest');
 /* 
 TASK 7 🚀
 // write a function that finds the average of overall ratings in a given array. The function should take an array as its argument and should return the average of the overall ratings in that array 
 hint - use .reduce()
 */
+//---------------------EXAMPLE-----------------------
+// const num = [, 2, 3, 4, 5, 6, 7];
+// const totalNumbers = num.reduce((acc, item) => {
+//     return acc+item;
+// }, 0)
+// console.log(totalNumber/num.length);
 
+const rating = ratings.reduce((acc, item) => {
+    return acc + item.overall_rating;
+},0)
+console.log(rating / vacations.length);
 
 /*
 TASK 8 🚀
@@ -72,3 +143,15 @@ Find the airport codes for each of the cities in the vacation array and write a 
 hint - your function should include array, index and code as parameters
 you will need to invoke the function each time you wish to add a new code
 */
+//-----------------------EXAMPLE--------------------------
+// function foodRemover(arr, item){
+//     const removed = arr.filter(food => {
+//         return != item
+//     })
+//     return removed;
+// }
+// foodRemover(toppings, "Onions")
+
+function codeGetter(vacations, item){
+    const
+}
