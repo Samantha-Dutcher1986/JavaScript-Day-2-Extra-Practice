@@ -31,7 +31,7 @@ function removeTopping(toppings, item){
     }
 }
 console.log(removeTopping);
-
+//**I'm not sure why I'm getting errors for this code**/
 
 
 /*
@@ -152,6 +152,9 @@ you will need to invoke the function each time you wish to add a new code
 // }
 // foodRemover(toppings, "Onions")
 
-function codeGetter(vacations, item){
-    const
+function codeGetter(vacations, item, code){
+    const codes = vacations.filter(code => {
+        return item.code
+    })
 }
+console.log(codeGetter);
